@@ -1,0 +1,49 @@
+.voice-mic-button {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  min-height: 56px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-danger);
+  color: #ffffff;
+  font-size: var(--font-size-title);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--color-danger-dark);
+}
+
+.voice-mic-button.standalone {
+  position: fixed;
+  right: var(--spacing-lg);
+  bottom: var(--spacing-lg);
+  border-radius: 50%;
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+}
+
+.voice-mic-button:hover {
+  background-color: var(--color-danger-dark);
+  transform: scale(1.05);
+}
+
+.voice-mic-button:active {
+  transform: scale(0.95);
+}
+
+.voice-mic-button[aria-pressed="true"] {
+  background-color: var(--color-secondary);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 170, 68, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 20px rgba(0, 170, 68, 0);
+  }
+}

@@ -1,0 +1,40 @@
+.match-results-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.match-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.match-card {
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.match-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.match-name {
+  font-size: var(--font-size-title);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.match-details {
+  font-size: var(--font-size-large);
+  color: var(--color-text-secondary);
+  margin: 0;
+}

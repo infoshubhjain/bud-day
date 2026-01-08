@@ -1,0 +1,59 @@
+.schedule-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.schedule-item {
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.schedule-item-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.schedule-activity-name {
+  font-size: var(--font-size-title);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+  flex: 1;
+}
+
+.schedule-reminder-badge {
+  font-size: var(--font-size-title);
+  line-height: 1;
+}
+
+.schedule-time-slot {
+  font-size: var(--font-size-large);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.schedule-date {
+  font-size: var(--font-size-large);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.schedule-time {
+  font-size: var(--font-size-large);
+  color: var(--color-text-secondary);
+  margin: 0;
+}

@@ -37,8 +37,11 @@ export const Onboarding = () => {
     <div className="screen" aria-label="Welcome">
       {step === "phone" && (
         <form onSubmit={handlePhoneSubmit} className="form">
-          <h1 className="screen-title">Welcome</h1>
-          {error && <p className="error-text" role="alert">{error}</p>}
+          <h1 className="screen-title">Welcome to Bud Day</h1>
+          <p className="helper-text" style={{ marginTop: "-1rem" }}>
+            Connect with friends and simplify your daily activities
+          </p>
+          {error && <div className="error-text" role="alert">{error}</div>}
           <label className="field-label">
             Your phone number
             <input
@@ -46,28 +49,35 @@ export const Onboarding = () => {
               type="tel"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
+              placeholder="Enter your phone number"
               required
             />
           </label>
-          <LargeButton type="submit">Continue</LargeButton>
+          <LargeButton type="submit" icon="→">
+            Continue
+          </LargeButton>
         </form>
       )}
       {step === "otp" && (
         <form onSubmit={handleOtpSubmit} className="form">
           <h1 className="screen-title">Enter code</h1>
-          <p className="helper-text">We sent a code to your phone.</p>
-          {error && <p className="error-text" role="alert">{error}</p>}
+          <p className="helper-text">We sent a code to your phone. Please enter it below.</p>
+          {error && <div className="error-text" role="alert">{error}</div>}
           <label className="field-label">
-            Code
+            Verification code
             <input
               className="field-input"
               type="text"
               value={otp}
               onChange={(e) => setOtp(e.target.value)}
+              placeholder="Enter 6-digit code"
+              maxLength={6}
               required
             />
           </label>
-          <LargeButton type="submit">Finish</LargeButton>
+          <LargeButton type="submit" icon="✓">
+            Finish
+          </LargeButton>
         </form>
       )}
     </div>

@@ -30,7 +30,10 @@ export const Schedule = () => {
     <div className="screen" aria-label="My schedule">
       <h1 className="screen-title">My schedule</h1>
       {matches.length === 0 ? (
-        <p className="helper-text">You have no scheduled activities yet.</p>
+        <div className="empty-state">
+          <div className="empty-state-icon">📅</div>
+          <p className="helper-text">You have no scheduled activities yet.</p>
+        </div>
       ) : (
         <ul className="list">
           {matches.map((m) => (

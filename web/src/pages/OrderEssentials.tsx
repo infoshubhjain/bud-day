@@ -29,17 +29,25 @@ export const OrderEssentials = () => {
     <div className="screen" aria-label="Order essentials">
       <h1 className="screen-title">Order essentials</h1>
       <ul className="list">
-        {categories.map((c) => (
-          <li key={c.key}>
-            <button
-              className="list-item-button"
-              type="button"
-              onClick={() => setSelected(c.key)}
-            >
-              {c.label}
-            </button>
-          </li>
-        ))}
+        {categories.map((c) => {
+          const iconMap: Record<string, string> = {
+            GROCERIES: "🛒",
+            MEDICINES: "💊",
+            MEALS: "🍽️"
+          };
+          return (
+            <li key={c.key}>
+              <button
+                className="category-button"
+                type="button"
+                onClick={() => setSelected(c.key)}
+              >
+                <span className="category-icon" aria-hidden="true">{iconMap[c.key]}</span>
+                <span>{c.label}</span>
+              </button>
+            </li>
+          );
+        })}
       </ul>
       {selected && (
         <div className="order-panel">
@@ -56,14 +64,15 @@ export const OrderEssentials = () => {
             />
           </label>
           <button type="button" className="large-button" onClick={handlePlace}>
-            Confirm order
+            <span className="large-button-icon" aria-hidden="true">✓</span>
+            <span className="large-button-label">Confirm order</span>
           </button>
         </div>
       )}
       {status && (
-        <p className="helper-text" role="status">
+        <div className="status-message" role="status">
           {status}
-        </p>
+        </div>
       )}
     </div>
   );

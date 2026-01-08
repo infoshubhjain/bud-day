@@ -62,6 +62,7 @@ export const Messages = () => {
                   className="list-item-button"
                   onClick={() => setSelectedId(m.id)}
                 >
+                  <span style={{ fontSize: "1.5rem", marginRight: "0.75rem" }} aria-hidden="true">👤</span>
                   {m.activity?.name || "Friend"}
                 </button>
               </li>
@@ -100,7 +101,10 @@ export const Messages = () => {
               </form>
             </>
           ) : (
-            <p className="helper-text">Choose a friend to start talking.</p>
+            <div className="empty-state">
+              <div className="empty-state-icon">💬</div>
+              <p className="helper-text">Choose a friend to start talking.</p>
+            </div>
           )}
         </section>
       </div>

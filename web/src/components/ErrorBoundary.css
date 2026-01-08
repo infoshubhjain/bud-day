@@ -1,0 +1,30 @@
+.error-boundary {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+  background-color: var(--color-background);
+}
+
+.error-boundary-content {
+  max-width: 500px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.error-boundary-title {
+  font-size: var(--font-size-title-large);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.error-boundary-text {
+  font-size: var(--font-size-large);
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}

@@ -1,0 +1,13 @@
+.input-hint {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-xs);
+  font-style: italic;
+}
+
+.auth-subtitle {
+  font-size: var(--font-size-large);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-md) 0;
+  text-align: center;
+}

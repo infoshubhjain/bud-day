@@ -1,0 +1,60 @@
+.voice-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: var(--spacing-lg);
+}
+
+.voice-overlay-content {
+  background-color: var(--color-background);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.voice-overlay-icon {
+  font-size: 5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.voice-listening-text {
+  font-size: var(--font-size-title);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.voice-transcription {
+  padding: var(--spacing-md);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-border);
+}
+
+.voice-transcription-label {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.voice-transcription-text {
+  font-size: var(--font-size-large);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.voice-overlay-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}

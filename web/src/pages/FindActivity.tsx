@@ -35,22 +35,48 @@ export const FindActivity = () => {
     <div className="screen" aria-label="Find a friend or activity">
       <h1 className="screen-title">Choose an activity</h1>
       {status && (
-        <p className="helper-text" role="status">
+        <div className="status-message" role="status">
           {status}
-        </p>
+        </div>
       )}
       <ul className="list">
-        {activities.map((act) => (
-          <li key={act.id}>
-            <button
-              className="list-item-button"
-              type="button"
-              onClick={() => handleChoose(act)}
-            >
-              {act.name}
-            </button>
-          </li>
-        ))}
+        {activities.map((act) => {
+          const iconMap: Record<string, string> = {
+            "morning-walk": "🌅",
+            "evening-walk": "🌆",
+            "light-exercise": "💪",
+            "chair-yoga": "🧘",
+            "stretching": "🤸",
+            "board-games": "🎲",
+            "card-games": "🃏",
+            "chess-checkers": "♟️",
+            "tea-chat": "☕",
+            "phone-chat": "📞",
+            "reading-circle": "📚",
+            "religious-visit": "🕌",
+            "prayer-group": "🙏",
+            "slow-walk-temple": "🚶",
+            "music-listening": "🎵",
+            "sing-along": "🎤",
+            "garden-visit": "🌳",
+            "indoor-plants": "🌱",
+            "video-call-family": "📹",
+            "memory-sharing": "💭"
+          };
+          const icon = iconMap[act.id] || "⭐";
+          return (
+            <li key={act.id}>
+              <button
+                className="activity-item"
+                type="button"
+                onClick={() => handleChoose(act)}
+              >
+                <span className="activity-icon" aria-hidden="true">{icon}</span>
+                <span>{act.name}</span>
+              </button>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

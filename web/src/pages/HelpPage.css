@@ -1,0 +1,51 @@
+.help-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.help-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.help-button-large {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-align: left;
+}
+
+.help-button-icon {
+  font-size: var(--font-size-title);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.help-button-text {
+  flex: 1;
+}
+
+.help-info {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.help-info-title {
+  font-size: var(--font-size-title);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.help-info-text {
+  font-size: var(--font-size-large);
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-sm) 0;
+  line-height: 1.6;
+}

@@ -1,0 +1,67 @@
+.messages-list-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.messages-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.message-list-item {
+  min-height: 80px;
+  padding: var(--spacing-md);
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: var(--shadow-sm);
+}
+
+.message-list-item:hover {
+  background-color: var(--color-background);
+  border-color: var(--color-primary);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.message-list-item:active {
+  transform: translateX(0);
+}
+
+.message-list-icon {
+  font-size: var(--font-size-title);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.message-list-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.message-list-name {
+  font-size: var(--font-size-title);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.message-list-activity {
+  font-size: var(--font-size-large);
+  color: var(--color-text-secondary);
+}
+
+.message-list-arrow {
+  font-size: var(--font-size-title);
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+}
