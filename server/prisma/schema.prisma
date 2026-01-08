@@ -3,8 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 model User {
@@ -27,6 +27,7 @@ model User {
   messagesSent       Message[]     @relation("MessagesSent")
   messagesReceived   Message[]     @relation("MessagesReceived")
   orders             Order[]
+  paymentMethods     PaymentMethod[]
   reportsFiled       Report[]      @relation("ReportsFiled")
   reportsAgainst     Report[]      @relation("ReportsAgainst")
   role               Role          @default(USER)
@@ -57,6 +58,7 @@ model Activity {
   description String?
   category    String
   isActive    Boolean  @default(true)
+  matches     Match[]
 }
 
 model Match {
@@ -71,6 +73,7 @@ model Match {
   approximateDistanceKm Float?
   scheduledFor  DateTime?
   createdAt     DateTime @default(now())
+  messages      Message[]
 }
 
 model Message {

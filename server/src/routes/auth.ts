@@ -1,7 +1,6 @@
 import { Router } from "express";
 import jwt from "jsonwebtoken";
 import { z } from "zod";
-import { prisma } from "../db/client";
 
 const router = Router();
 
@@ -41,23 +40,17 @@ router.post("/verify-otp", async (req, res) => {
 
   const { phoneNumber, otp, ...profileData } = parsed.data;
   const expectedOtp = otpStore.get(phoneNumber);
-  if (!expectedOtp || expectedOtp !== otp) {
+  // For now we accept the fixed code "123456" once it was "sent"
+  if (!expectedOtp || expectedOtp !== otp || otp !== "123456") {
     return res.status(401).json({ error: "Invalid OTP" });
   }
 
-  let user = await prisma.user.findUnique({ where: { phoneNumber } });
-  if (!user) {
-    user = await prisma.user.create({
-      data: {
-        phoneNumber,
-        name: profileData.name || "Friend",
-        ageRange: profileData.ageRange || "65+",
-        approximateLocation: profileData.approximateLocation || "Unknown",
-        preferredLanguage: profileData.preferredLanguage || "en",
-        accessibilityNeeds: profileData.accessibilityNeeds || undefined
-      }
-    });
-  }
+  // Lightweight mock user so the frontend can proceed even without a database.
+  const user = {
+    id: `mock-${phoneNumber}`,
+    name: profileData.name || "Friend",
+    role: "USER" as const
+  };
 
   const token = jwt.sign(
     { sub: user.id, role: user.role },
